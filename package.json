@@ -1,6 +1,7 @@
 {
   "name": "bookshelf",
   "version": "0.1.0",
+<<<<<<< HEAD
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
@@ -35,4 +36,7 @@
       "last 1 safari version"
     ]
   }
+=======
+  "private": true
+>>>>>>> 55b6d69283c09f312363c02c0fe306fec890dc62
 }

@@ -3,20 +3,25 @@ import React, { createContext, useState } from "react";
 export const ThemeContext = createContext();
 
 const ThemeContextProvider = (props) => {
-  const [islightTheme, setIsLightTheme] = useState(true);
-  const lightTheme = { char: "#555", bg: "#ddd", containerColor: "#eee" };
-  const darkTheme = { char: "#ddd", bg: "#333", containerColor: "#555" };
+  const [isLightTheme, setIsLightTheme] = useState(true);
+  const lightTheme = {
+    char: "#373737",
+    bg: "#ddd",
+    containerColor: "whitesmoke",
+  };
+  const darkTheme = { char: "#3e3e3e", bg: "#333", containerColor: "#555" };
 
   const toggleTheme = () => {
-    setIsLightTheme(!islightTheme);
+    setIsLightTheme(!isLightTheme);
   };
+
+  const theme = isLightTheme ? lightTheme : darkTheme;
 
   return (
     <ThemeContext.Provider
       value={{
-        islightTheme,
-        lightTheme,
-        darkTheme,
+        theme,
+        isLightTheme,
         toggleTheme,
       }}
     >

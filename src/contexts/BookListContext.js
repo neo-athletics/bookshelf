@@ -8,11 +8,9 @@ const BookListContextProvider = (props) => {
 
   const removeBook = (listToBeSet, unfilteredList, bookToRemove, bool) => {
     console.log(unfilteredList);
-    const filteredList = unfilteredList.filter((book) => {
-      if (book.completed !== bool) {
-        return book;
-      }
-    });
+    const filteredList = unfilteredList.filter(
+      (book) => book.completed !== bool
+    );
     listToBeSet(filteredList);
   };
 

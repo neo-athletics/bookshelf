@@ -77,10 +77,10 @@ const BooksReadList = () => {
               <motion.p
                 key={i}
                 variants={{
-                  hidden: (i) => ({ opacity: 0, y: -50 * i }),
+                  hidden: (i) => ({ opacity: 0, x: -50 * i }),
                   visible: (i) => ({
                     opacity: 1,
-                    y: 0,
+                    x: 0,
                     transition: { delay: i * 0.1 },
                   }),
                   removed: {
@@ -100,7 +100,7 @@ const BooksReadList = () => {
                 >
                   <FontAwesomeIcon
                     icon={faUndo}
-                    color={isLightTheme ? "#088f03" : "#19fb11"}
+                    color={isLightTheme ? "#15ad15" : "#19fb11"}
                     size="lg"
                   />
                 </button>

@@ -92,7 +92,7 @@ const BookList = () => {
     >
       <h2>Pending List</h2>
 
-      <SimpleBar style={{ height: "150px" }}>
+      <SimpleBar style={{ height: window.innerHeight < 600 ? "150px" : "275" }}>
         {bookList.length === 0 ? (
           <motion.p
             initial={{ opacity: 0 }}
@@ -107,10 +107,10 @@ const BookList = () => {
               <motion.p
                 key={i}
                 variants={{
-                  hidden: (i) => ({ opacity: 0, y: -50 * i }),
+                  hidden: (i) => ({ opacity: 0, x: -50 * i }),
                   visible: (i) => ({
                     opacity: 1,
-                    y: 0,
+                    x: 0,
                     transition: { delay: i * 0.1 },
                   }),
                   removed: {

@@ -8,7 +8,7 @@ const ToggleTheme = () => {
   return (
     <>
       {" "}
-      <div>
+      <div className={"toggleSwitch"}>
         <input
           type={"checkbox"}
           id="check"

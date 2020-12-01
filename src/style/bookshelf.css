@@ -138,6 +138,12 @@ input[type="checkbox"]:not(:checked) ~ label .ball {
 .bookStatus:hover {
   cursor: pointer;
 }
+.fa-check-circle {
+  transition: color 0.25s ease-in-out;
+}
+.fa-check-circle:hover {
+  color: #15ad15;
+}
 form input[type="text"] {
   height: 30px;
   border-radius: 5px;
@@ -213,4 +219,46 @@ span.bookLength {
   background: #e0e0e0a6;
   border-radius: 20px;
   margin-right: 3px;
+}
+@media only screen and (max-width: 600px) {
+  .glassContainer {
+    width: 95vw;
+    height: 90vh;
+    position: static;
+    transform: none;
+  }
+  .glassMorphism:nth-child(1) {
+    background-size: cover;
+    height: 92%;
+  }
+  .glassContainer .content {
+    height: 90vh;
+  }
+  .pendingBookList,
+  .booksReadList {
+    height: 90%;
+  }
+  .bookForm {
+    position: absolute;
+    bottom: 170px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
+  .toggleSwitch {
+    padding-bottom: 20px;
+  }
+  form input[type="text"] {
+    width: 300px;
+  }
+  input[type="submit"] {
+    width: 305px;
+  }
+}
+@media only screen and (max-width: 360px) {
+  form input[type="text"] {
+    width: 260px;
+  }
+  input[type="submit"] {
+    width: 265px;
+  }
 }

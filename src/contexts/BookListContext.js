@@ -6,22 +6,15 @@ const BookListContextProvider = (props) => {
   const [bookList, setBookList] = useState([]);
   const [booksReadList, setBooksReadList] = useState([]);
 
-  const removeBook = (listToBeSet, filteredList, bookToRemove) => {
-    listToBeSet(
-      filteredList.filter((book) => {
-        return (
-          book.title !== bookToRemove.title &&
-          book.author !== bookToRemove.author
-        );
-      })
-    );
+  const removeBook = (listToBeSet, unfilteredList, bookToRemove, bool) => {
+    console.log(unfilteredList);
+    const filteredList = unfilteredList.filter((book) => {
+      if (book.completed !== bool) {
+        return book;
+      }
+    });
+    listToBeSet(filteredList);
   };
-
-  //removes and sets list
-  // const setList = (listToBeSet, bookList, theBook, setList, list) => {
-  //   removeBook(listToBeSet, bookList, theBook);
-  //   setList([...list, theBook]);
-  // };
 
   return (
     <BookListContext.Provider

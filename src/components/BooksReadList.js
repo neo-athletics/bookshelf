@@ -5,6 +5,8 @@ import { faUndo } from "@fortawesome/free-solid-svg-icons";
 import SimpleBar from "simplebar-react";
 import "simplebar/dist/simplebar.min.css";
 import { ThemeContext } from "../contexts/ThemeContext";
+import { AnimatePresence, motion } from "framer-motion";
+
 const BooksReadList = () => {
   const {
     booksReadList,
@@ -14,16 +16,20 @@ const BooksReadList = () => {
     removeBook,
   } = useContext(BookListContext);
   const { theme, isLightTheme } = useContext(ThemeContext);
+
   const revertCompletion = (toggleBook) => {
-    const newList = booksReadList.map((book) =>
-      book.title === toggleBook.title && book.author === toggleBook.author
-        ? { ...book, completed: !toggleBook.completed }
-        : book
-    );
+    const newList = booksReadList.map((book) => {
+      if (
+        book.title === toggleBook.title &&
+        book.author === toggleBook.author
+      ) {
+        return { ...book, completed: !toggleBook.completed };
+      } else {
+        return book;
+      }
+    });
 
-    setBooksReadList(newList);
-
-    removeBook(setBooksReadList, booksReadList, toggleBook);
+    removeBook(setBooksReadList, newList, toggleBook, false);
 
     const uncompletedBook = newList.filter(
       (bookFilter) => bookFilter.completed === false
@@ -32,16 +38,61 @@ const BooksReadList = () => {
     setBookList([...bookList, ...uncompletedBook]);
   };
 
+  const containerVariants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: { delay: 0.1, duration: 0.2 },
+    },
+    exit: {
+      x: "-100vw",
+      transition: { ease: "easeInOut" },
+    },
+  };
+
   return (
-    <div className={"booksReadList"}>
+    <motion.div
+      className={"booksReadList"}
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
       <h2>Completed List</h2>
+
       <SimpleBar style={{ height: "150px" }}>
         {booksReadList.length === 0 ? (
-          <p style={{ color: theme.char }}>You have some work to do</p>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { delay: 0.05 } }}
+            style={{ color: theme.char }}
+          >
+            You have some work to do
+          </motion.p>
         ) : (
-          booksReadList.map((book) => (
-            <div>
-              <p style={{ color: theme.char }}>
+          <AnimatePresence>
+            {booksReadList.map((book, i) => (
+              <motion.p
+                key={i}
+                variants={{
+                  hidden: (i) => ({ opacity: 0, y: -50 * i }),
+                  visible: (i) => ({
+                    opacity: 1,
+                    y: 0,
+                    transition: { delay: i * 0.1 },
+                  }),
+                  removed: {
+                    opacity: 0,
+                  },
+                }}
+                custom={i}
+                initial="hidden"
+                animate="visible"
+                exit="removed"
+                style={{ color: theme.char }}
+              >
                 {book.title}, {book.author}
                 <button
                   onClick={() => revertCompletion(book)}
@@ -53,12 +104,12 @@ const BooksReadList = () => {
                     size="lg"
                   />
                 </button>
-              </p>
-            </div>
-          ))
+              </motion.p>
+            ))}
+          </AnimatePresence>
         )}
       </SimpleBar>
-    </div>
+    </motion.div>
   );
 };
 

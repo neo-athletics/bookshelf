@@ -1,5 +1,4 @@
 body {
-  /* background-image: url("../images/cool-background.png"); */
   background: linear-gradient(
     160deg,
     rgba(113, 87, 190, 1) 30%,
@@ -71,9 +70,6 @@ input[type="text"],
 
 .glassContainer .content {
   z-index: 1;
-  /* display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr; */
   display: flex;
   flex-direction: column;
 }
@@ -127,6 +123,9 @@ input[type="text"],
   left: 3px;
   transition: transform 0.3s linear;
 }
+.ball:hover {
+  cursor: pointer;
+}
 input[type="checkbox"]:not(:checked) ~ label .ball {
   transform: translateX(29px);
 }
@@ -170,6 +169,9 @@ input[type="submit"] {
   background-color: rgb(0, 162, 255);
   margin-left: 9px;
   font-size: 18px;
+}
+input[type="submit"]:hover {
+  cursor: pointer;
 }
 .nav {
   text-align: center;

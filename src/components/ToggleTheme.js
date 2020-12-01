@@ -15,22 +15,15 @@ const ToggleTheme = () => {
           checked={isLightTheme}
           onChange={toggleTheme}
         />
-        <label for={"check"} className={"checkToggle"}>
-          <FontAwesomeIcon icon={faMoon} color={"yellow"} size="s" />
-          <FontAwesomeIcon icon={faSun} color={"#ffff23"} size="s" />
+        <label htmlFor={"check"} className={"checkToggle"}>
+          <FontAwesomeIcon icon={faMoon} color={"yellow"} size="1x" />
+          <FontAwesomeIcon icon={faSun} color={"#ffff23"} size="1x" />
           <div
             className={"ball"}
             style={{ background: theme.containerColor }}
           ></div>
         </label>
       </div>
-      {/* <button
-        style={{ color: theme.char, background: theme.containerColor }}
-        onClick={toggleTheme}
-        className={"toggleTheme"}
-      >
-        Toggle Theme
-      </button> */}
     </>
   );
 };

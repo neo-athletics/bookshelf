@@ -1,21 +1,19 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import BookList from "./components/BookList";
 import ToggleTheme from "./components/ToggleTheme";
 import { ThemeContext } from "./contexts/ThemeContext";
 import BooksReadList from "./components/BooksReadList";
 import { BookListContext } from "./contexts/BookListContext";
 import "./style/bookshelf.css";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  NavLink,
-} from "react-router-dom";
+import { Switch, Route, NavLink, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
+  const location = useLocation();
   const { theme, isLightTheme } = useContext(ThemeContext);
   const { bookList, booksReadList } = useContext(BookListContext);
 
+  console.log(location);
   return (
     <div
       className="App"
@@ -30,23 +28,22 @@ function App() {
           ></div>
           <div className={"glassMorphism"}></div>
           <div className={"content"}>
-            <Router>
-              <ul className={"nav"}>
-                <li>
-                  <NavLink exact to="/" activeClassName={"active"}>
-                    Pending
-                  </NavLink>
-                  <span className={"bookLength"}>{bookList.length}</span>
-                </li>
-
-                <li>
-                  <NavLink to="/completed" activeClassName={"active"}>
-                    Completed
-                  </NavLink>
-                  <span className={"bookLength"}>{booksReadList.length}</span>
-                </li>
-              </ul>
-              <Switch>
+            <ul className={"nav"}>
+              <li>
+                <NavLink exact to="/" activeClassName={"active"}>
+                  Pending
+                </NavLink>
+                <span className={"bookLength"}>{bookList.length}</span>
+              </li>
+              <li>
+                <NavLink to="/completed" activeClassName={"active"}>
+                  Completed
+                </NavLink>
+                <span className={"bookLength"}>{booksReadList.length}</span>
+              </li>
+            </ul>
+            <AnimatePresence exitBeforeEnter>
+              <Switch key={location.key} location={location}>
                 <Route path="/" exact>
                   <BookList />
                 </Route>
@@ -59,8 +56,8 @@ function App() {
                   </div>
                 </Route>
               </Switch>
-              <ToggleTheme />
-            </Router>
+            </AnimatePresence>
+            <ToggleTheme />
           </div>
         </div>
       </div>

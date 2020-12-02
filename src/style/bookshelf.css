@@ -88,7 +88,7 @@ input[type="text"],
   text-align: center;
   font-size: 21px;
 }
-.bookform {
+.bookForm {
   align-self: center;
   }
 
@@ -238,12 +238,7 @@ span.bookLength {
   .booksReadList {
     height: 90%;
   }
-  .bookForm {
-    position: absolute;
-    bottom: 170px;
-    left: 50%;
-    transform: translate(-50%, 50%);
-  }
+
   .toggleSwitch {
     padding-bottom: 20px;
   }

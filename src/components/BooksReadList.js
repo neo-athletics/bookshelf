@@ -62,7 +62,9 @@ const BooksReadList = () => {
     >
       <h2>Completed List</h2>
 
-      <SimpleBar style={{ height: "150px" }}>
+      <SimpleBar
+        style={{ height: window.innerWidth >= 600 ? "150px" : "275px" }}
+      >
         {booksReadList.length === 0 ? (
           <motion.p
             initial={{ opacity: 0 }}
@@ -97,6 +99,7 @@ const BooksReadList = () => {
                 <button
                   onClick={() => revertCompletion(book)}
                   className={"bookStatus"}
+                  title={"Revert Completion"}
                 >
                   <FontAwesomeIcon
                     icon={faUndo}

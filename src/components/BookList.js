@@ -81,7 +81,7 @@ const BookList = () => {
       hasRenderedRef.current = false;
     }
   }, [bookList]);
-
+  console.log(window.innerHeight);
   return (
     <motion.div
       className={"pendingBookList"}
@@ -92,7 +92,9 @@ const BookList = () => {
     >
       <h2>Pending List</h2>
 
-      <SimpleBar style={{ height: window.innerHeight < 600 ? "150px" : "275" }}>
+      <SimpleBar
+        style={{ height: window.innerWidth >= 600 ? "150px" : "275px" }}
+      >
         {bookList.length === 0 ? (
           <motion.p
             initial={{ opacity: 0 }}
@@ -127,6 +129,7 @@ const BookList = () => {
                 <button
                   onClick={() => toggleCompletion(book)}
                   className={"bookStatus"}
+                  title={"Completed Book"}
                 >
                   <FontAwesomeIcon
                     icon={faCheckCircle}
@@ -143,6 +146,7 @@ const BookList = () => {
                 <button
                   onClick={() => togglePending(book)}
                   className={"bookStatus"}
+                  title={"Pending Book"}
                 >
                   <FontAwesomeIcon
                     icon={faHourglassHalf}

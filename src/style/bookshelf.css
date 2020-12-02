@@ -89,8 +89,8 @@ input[type="text"],
   font-size: 21px;
 }
 .bookform {
-  align-self: flex-start;
-}
+  align-self: center;
+  }
 
 #check {
   appearance: none;

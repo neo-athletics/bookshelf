@@ -47,7 +47,8 @@ const BooksReadList = () => {
       transition: { delay: 0.1, duration: 0.2 },
     },
     exit: {
-      x: "-100vw",
+      x: -200,
+      opacity: 0,
       transition: { ease: "easeInOut" },
     },
   };
@@ -62,9 +63,7 @@ const BooksReadList = () => {
     >
       <h2>Completed List</h2>
 
-      <SimpleBar
-        style={{ height: window.innerWidth >= 600 ? "150px" : "275px" }}
-      >
+      <SimpleBar style={{ height: "150px" }}>
         {booksReadList.length === 0 ? (
           <motion.p
             initial={{ opacity: 0 }}

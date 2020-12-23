@@ -30,6 +30,7 @@ const AddBookForm = () => {
           placeholder="Book Title"
           value={book.title}
           onChange={handleChange}
+          required
         />
         <input
           type="text"
@@ -37,6 +38,7 @@ const AddBookForm = () => {
           placeholder="Book Author"
           value={book.author}
           onChange={handleChange}
+          required
         />
         <input type="submit" value="Add Book" />
       </form>

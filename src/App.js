@@ -19,14 +19,17 @@ function App() {
       className="App"
       style={!isLightTheme ? { background: "#000", opacity: "0.7" } : {}}
     >
-      <div className={"bookshelfContainer"}>
+      <div>
         <h1 style={{ color: theme.char }}>Book Shelf</h1>
-        <div className={"glassContainer"}>
-          <div
-            className={"glassMorphism"}
-            style={{ boxShadow: `inset 0 0 2000px ${theme.bg}` }}
-          ></div>
-          <div className={"glassMorphism"}></div>
+
+        <div className={"bookshelfContainer"}>
+          <div className={"glassContainer"}>
+            <div
+              className={"glassMorphism"}
+              style={{ boxShadow: `inset 0 0 2000px ${theme.bg}` }}
+            ></div>
+          </div>
+
           <div className={"content"}>
             <ul className={"nav"}>
               <li>

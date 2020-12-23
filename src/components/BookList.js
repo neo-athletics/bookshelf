@@ -67,7 +67,8 @@ const BookList = () => {
       transition: { delay: 0.1, duration: 0.2 },
     },
     exit: {
-      x: "-100vw",
+      x: -200,
+      opacity: 0,
       transition: { ease: "easeInOut" },
     },
   };
@@ -133,13 +134,7 @@ const BookList = () => {
                 >
                   <FontAwesomeIcon
                     icon={faCheckCircle}
-                    color={
-                      book.completed
-                        ? "green"
-                        : isLightTheme
-                        ? "#482b61"
-                        : "#425af5"
-                    }
+                    color={isLightTheme ? "#482b61" : "#425af5"}
                     size="lg"
                   />
                 </button>

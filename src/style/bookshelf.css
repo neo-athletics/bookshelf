@@ -1,283 +1,283 @@
 html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
 }
 body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(
-    160deg,
-    rgba(113, 87, 190, 1) 30%,
-    rgba(45, 190, 241, 1) 100%
-  );
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+        160deg,
+        rgba(113, 87, 190, 1) 30%,
+        rgba(45, 190, 241, 1) 100%
+    );
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 #root {
-  height: inherit;
-  width: 100%;
+    height: inherit;
+    width: 100%;
 }
 .App {
-  padding-top: 0;
-  margin-top: 0;
-  width: 100%;
-  height: 100%;
-  transition: background 0.4s ease-in-out, opacity 0.4s ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    padding-top: 0;
+    margin-top: 0;
+    width: 100%;
+    height: 100vh;
+    transition: background 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
-  font-family: "Amatic SC", cursive;
-  text-align: center;
-  margin: 0;
-  padding: 10px 0 10px;
+    font-family: "Amatic SC", cursive;
+    text-align: center;
+    margin: 0;
+    padding: 10px 0 10px;
 }
 h2 {
-  font-family: "Catamaran", sans-serif;
+    font-family: "Catamaran", sans-serif;
 }
 p,
 button,
 input[type="submit"],
 input[type="text"],
 .nav li {
-  font-family: "Nerko One", cursive;
-  color: #000000;
+    font-family: "Nerko One", cursive;
+    color: #000000;
 }
 .bookshelfContainer {
-  position: relative;
-  width: 500px;
-  height: 500px;
+    position: relative;
+    width: 500px;
+    height: 500px;
 }
 .glassContainer {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  margin: auto;
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  border-radius: 20px;
-  overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 20px;
+    overflow: hidden;
 }
 .glassMorphism {
-  background-image: url("../images/cool-background.png");
-  background-size: cover;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  filter: blur(10px);
-  box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.432);
+    background-image: url("../images/cool-background.png");
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    filter: blur(10px);
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.432);
 }
 
 .content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 .pendingBookList,
 .booksReadList {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .pendingBookList h2,
 .booksReadList h2 {
-  align-self: center;
+    align-self: center;
 }
 .pendingBookList p,
 .booksReadList p {
-  text-align: center;
-  font-size: 21px;
+    text-align: center;
+    font-size: 21px;
 }
 .bookForm {
-  align-self: center;
+    align-self: center;
 }
 
 #check {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  border: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: none;
 }
 .checkToggle {
-  margin: auto;
-  height: 30px;
-  width: 60px;
-  border-radius: 50px;
-  display: flex;
-  background-color: #333333;
-  position: relative;
+    margin: auto;
+    height: 30px;
+    width: 60px;
+    border-radius: 50px;
+    display: flex;
+    background-color: #333333;
+    position: relative;
 }
 .fa-sun {
-  position: absolute;
-  top: 6px;
-  right: 9px;
+    position: absolute;
+    top: 6px;
+    right: 9px;
 }
 .fa-moon {
-  position: absolute;
-  top: 6px;
-  left: 9px;
+    position: absolute;
+    top: 6px;
+    left: 9px;
 }
 .ball {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  position: absolute;
-  top: 2px;
-  left: 3px;
-  transition: transform 0.3s linear;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    transition: transform 0.3s linear;
 }
 .ball:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 input[type="checkbox"]:not(:checked) ~ label .ball {
-  transform: translateX(29px);
+    transform: translateX(29px);
 }
 /* align form elements */
 .bookStatus {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  background-color: transparent;
-  border: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: none;
 }
 .bookStatus:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 @media (hover: hover) and (pointer: fine) {
-  .fa-check-circle {
-    transition: color 0.25s ease-in-out;
-  }
-  .fa-check-circle:hover {
-    color: #15ad15;
-  }
+    .fa-check-circle {
+        transition: color 0.25s ease-in-out;
+    }
+    .fa-check-circle:hover {
+        color: #15ad15;
+    }
 }
 
 form input[type="text"] {
-  height: 30px;
-  border-radius: 5px;
-  box-shadow: none;
-  border: 2px solid rgb(46, 118, 226);
-  outline: none;
-  font-size: 18px;
-  width: 135px;
-  display: block;
-  margin-bottom: 10px;
-  margin-left: 9px;
+    height: 30px;
+    border-radius: 5px;
+    box-shadow: none;
+    border: 2px solid rgb(46, 118, 226);
+    outline: none;
+    font-size: 18px;
+    width: 135px;
+    display: block;
+    margin-bottom: 10px;
+    margin-left: 9px;
 }
 form input[type="text"]:focus {
-  border-color: rgb(41, 212, 41);
+    border-color: rgb(41, 212, 41);
 }
 .toggleTheme {
-  height: 35px;
-  width: 150px;
-  border-radius: 5px;
-  border: 1px solid rgb(49, 49, 49);
-  font-size: 18px;
+    height: 35px;
+    width: 150px;
+    border-radius: 5px;
+    border: 1px solid rgb(49, 49, 49);
+    font-size: 18px;
 }
 
 input[type="submit"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  height: 35px;
-  width: 150px;
-  border-radius: 5px;
-  border: 1px solid rgb(0, 34, 128);
-  background-color: rgb(0, 162, 255);
-  margin-left: 9px;
-  font-size: 18px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 35px;
+    width: 150px;
+    border-radius: 5px;
+    border: 1px solid rgb(0, 34, 128);
+    background-color: rgb(0, 162, 255);
+    margin-left: 9px;
+    font-size: 18px;
 }
 input[type="submit"]:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 .nav {
-  text-align: center;
-  padding-left: 0;
-  margin-top: 30px;
+    text-align: center;
+    padding-left: 0;
+    margin-top: 30px;
 }
 .nav li {
-  display: inline;
-  list-style-type: none;
-  margin: 0 10px;
-  font-size: 22px;
-  position: relative;
-  margin-right: 15px;
+    display: inline;
+    list-style-type: none;
+    margin: 0 10px;
+    font-size: 22px;
+    position: relative;
+    margin-right: 15px;
 }
 span.bookLength {
-  width: 20px;
-  height: 20px;
-  background-color: rgb(255, 255, 255);
-  display: inline-block;
-  border-radius: 50%;
-  margin: 0;
-  position: absolute;
-  top: -5px;
-  right: -20px;
-  font-size: 16px;
-  color: rgb(253, 37, 37);
+    width: 20px;
+    height: 20px;
+    background-color: rgb(255, 255, 255);
+    display: inline-block;
+    border-radius: 50%;
+    margin: 0;
+    position: absolute;
+    top: -5px;
+    right: -20px;
+    font-size: 16px;
+    color: rgb(253, 37, 37);
 }
 .nav li a {
-  text-decoration: none;
-  color: #084b66a9;
+    text-decoration: none;
+    color: #084b66a9;
 }
 .nav li a.active {
-  color: #084b66;
+    color: #084b66;
 }
 .simplebar-scrollbar:before {
-  background: linear-gradient(to bottom right, #33ccff 0%, #cc66ff 100%);
+    background: linear-gradient(to bottom right, #33ccff 0%, #cc66ff 100%);
 }
 .simplebar-track {
-  background: #e0e0e0a6;
-  border-radius: 20px;
-  margin-right: 3px;
+    background: #e0e0e0a6;
+    border-radius: 20px;
+    margin-right: 3px;
 }
 
 @media only screen and (orientation: landscape) {
-  #root {
-    height: initial;
-  }
+    #root {
+        height: initial;
+    }
 
-  .bookshelfContainer {
-    width: 95vw;
-    height: 90%;
-    margin-bottom: 10px;
-    padding-bottom: 5px;
-  }
-  form input[type="text"] {
-    width: 500px;
-  }
-  input[type="submit"] {
-    width: 170px;
-  }
+    .bookshelfContainer {
+        width: 95vw;
+        height: 90%;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+    }
+    form input[type="text"] {
+        width: 500px;
+    }
+    input[type="submit"] {
+        width: 170px;
+    }
 }
 @media only screen and (max-width: 600px) {
-  .bookshelfContainer {
-    width: 95vw;
-    height: 90%;
-  }
-  .pendingBookList,
-  .booksReadList {
-    height: 90%;
-  }
-  .toggleSwitch {
-    padding-bottom: 20px;
-  }
-  form input[type="text"] {
-    width: 300px;
-  }
-  input[type="submit"] {
-    width: 100px;
-    height: 40px;
-  }
+    .bookshelfContainer {
+        width: 95vw;
+        height: 90%;
+    }
+    .pendingBookList,
+    .booksReadList {
+        height: 90%;
+    }
+    .toggleSwitch {
+        padding-bottom: 20px;
+    }
+    form input[type="text"] {
+        width: 300px;
+    }
+    input[type="submit"] {
+        width: 100px;
+        height: 40px;
+    }
 }
 @media only screen and (max-width: 360px) {
-  form input[type="text"] {
-    width: 260px;
-  }
-  input[type="submit"] {
-    width: 265px;
-  }
+    form input[type="text"] {
+        width: 260px;
+    }
+    input[type="submit"] {
+        width: 265px;
+    }
 }
